@@ -175,6 +175,11 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfX-4x-cIQ">
                                 <rect key="frame" x="255" y="552" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="9ou-eo-CgJ"/>
+                                    <constraint firstAttribute="width" secondItem="VfX-4x-cIQ" secondAttribute="height" multiplier="1:1" id="Ib2-Vl-Bqu"/>
+                                    <constraint firstAttribute="width" constant="75" id="J6v-OG-Rhc"/>
+                                </constraints>
                                 <state key="normal" image="pauseButton"/>
                                 <connections>
                                     <action selector="pauseBtnPressed:" destination="TnT-ZB-xRj" eventType="touchUpInside" id="gv0-eb-Tkm"/>
@@ -189,11 +194,19 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="endRunButton" translatesAutoresizingMaskIntoConstraints="NO" id="u0p-lb-I3l">
                                 <rect key="frame" x="57" y="561" width="57" height="57"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w25-zD-Ail">
+                                <rect key="frame" x="187" y="454" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="29"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="JYR-zO-68y" firstAttribute="trailing" secondItem="hQM-Vb-8Dk" secondAttribute="trailing" id="07R-KT-Gks"/>
                             <constraint firstItem="m5x-Ie-FNm" firstAttribute="trailing" secondItem="hQM-Vb-8Dk" secondAttribute="trailing" id="1hf-gR-Yy5"/>
+                            <constraint firstItem="VfX-4x-cIQ" firstAttribute="leading" secondItem="I8b-bn-inb" secondAttribute="trailing" constant="-23.5" id="2Hw-jv-hwY"/>
                             <constraint firstItem="cZG-gr-YF7" firstAttribute="centerY" secondItem="JYR-zO-68y" secondAttribute="centerY" id="2bk-cC-Lib"/>
                             <constraint firstItem="cZG-gr-YF7" firstAttribute="centerX" secondItem="JYR-zO-68y" secondAttribute="centerX" id="5JQ-je-moq"/>
                             <constraint firstItem="oJs-nz-sr9" firstAttribute="centerX" secondItem="I8b-bn-inb" secondAttribute="centerX" constant="25" id="Aeg-q1-pDw"/>
@@ -205,7 +218,6 @@
                             <constraint firstItem="hQM-Vb-8Dk" firstAttribute="bottom" secondItem="I8b-bn-inb" secondAttribute="bottom" constant="40" id="Orm-ly-OHh"/>
                             <constraint firstItem="I8b-bn-inb" firstAttribute="centerX" secondItem="g7e-gi-P1y" secondAttribute="centerX" constant="-25" id="R4y-zP-VMl"/>
                             <constraint firstItem="JYR-zO-68y" firstAttribute="top" secondItem="kAR-cW-gPb" secondAttribute="bottom" constant="20" id="Wkf-ei-WZG"/>
-                            <constraint firstItem="VfX-4x-cIQ" firstAttribute="leading" secondItem="I8b-bn-inb" secondAttribute="trailing" constant="-23.5" id="aoh-7h-fgz"/>
                             <constraint firstItem="ZE7-Oy-0lg" firstAttribute="top" secondItem="hQM-Vb-8Dk" secondAttribute="top" constant="8" id="cYz-t8-8wv"/>
                             <constraint firstItem="m5x-Ie-FNm" firstAttribute="top" secondItem="g7e-gi-P1y" secondAttribute="top" id="gqe-uF-7ZZ"/>
                             <constraint firstItem="I8b-bn-inb" firstAttribute="leading" secondItem="u0p-lb-I3l" secondAttribute="trailing" constant="-67.5" id="ie0-2K-0fX"/>
@@ -229,6 +241,7 @@
                         <outlet property="pauseBtn" destination="VfX-4x-cIQ" id="SIm-f9-cCd"/>
                         <outlet property="sliderImageView" destination="u0p-lb-I3l" id="eCi-Ix-5gW"/>
                         <outlet property="swipeBGImageVIew" destination="I8b-bn-inb" id="GKc-EG-dO4"/>
+                        <outlet property="visinaLbl" destination="w25-zD-Ail" id="mNx-IA-OvO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igK-bQ-dmM" userLabel="First Responder" sceneMemberID="firstResponder"/>
