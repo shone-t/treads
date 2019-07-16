@@ -25,6 +25,9 @@ class CurrentRunVC: LocationVC {
     
     var runDistance: Double = 0.0
     
+    var counter = 0
+    var timer = Timer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,10 +45,23 @@ class CurrentRunVC: LocationVC {
     
     func startRun(){
         manager?.startUpdatingLocation()
+        startTimer()
     }
     func endRun() {
         manager?.stopUpdatingLocation()
     }
+    
+    func startTimer(){
+        durationLbl.text = counter.formatTimeDurationToString()
+        //skracenica timer selector
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateCounter() {
+        counter += 1
+        durationLbl.text = counter.formatTimeDurationToString()
+    }
+    
     @IBAction func pauseBtnPressed(_ sender: Any) {
     }
     
@@ -89,7 +105,7 @@ extension CurrentRunVC: CLLocationManagerDelegate {
             startLocation = locations.first
         } else if let location = locations.last {
             runDistance += lastLocation.distance(from: location)
-            distanceLbl.text = "\(runDistance)" //u metrima
+            //distanceLbl.text = "\(runDistance)" //u metrima
             distanceLbl.text = "\(runDistance.metersToMiles(place: 2))" //u miljama
         }
         lastLocation = locations.last
