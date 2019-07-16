@@ -33,6 +33,7 @@
 		52AB33AE22DDA39E0045E358 /* Montserrat-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52AB339C22DDA39E0045E358 /* Montserrat-ExtraLightItalic.ttf */; };
 		52AB33B022DDCC270045E358 /* LocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB33AF22DDCC270045E358 /* LocationVC.swift */; };
 		52AB33B222DDD0E70045E358 /* CurrentRunVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB33B122DDD0E70045E358 /* CurrentRunVC.swift */; };
+		52AB33B422DDEFD90045E358 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB33B322DDEFD90045E358 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		52AB339C22DDA39E0045E358 /* Montserrat-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		52AB33AF22DDCC270045E358 /* LocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationVC.swift; sourceTree = "<group>"; };
 		52AB33B122DDD0E70045E358 /* CurrentRunVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentRunVC.swift; sourceTree = "<group>"; };
+		52AB33B322DDEFD90045E358 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		52AB338622DD9BE50045E358 /* Extenstions */ = {
 			isa = PBXGroup;
 			children = (
+				52AB33B322DDEFD90045E358 /* Extensions.swift */,
 			);
 			path = Extenstions;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52AB33B222DDD0E70045E358 /* CurrentRunVC.swift in Sources */,
+				52AB33B422DDEFD90045E358 /* Extensions.swift in Sources */,
 				52AB337622DD99550045E358 /* RunLogVC.swift in Sources */,
 				52AB33B022DDCC270045E358 /* LocationVC.swift in Sources */,
 				52AB337222DD99550045E358 /* AppDelegate.swift in Sources */,

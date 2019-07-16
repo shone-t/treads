@@ -36,7 +36,7 @@ class CurrentRunVC: LocationVC {
     
     override func viewWillAppear(_ animated: Bool) {
         manager?.delegate = self
-        manager?.distanceFilter = 10 //koliko cesto valjda da stavlja tacke, 10metara
+        manager?.distanceFilter = 10 //koliko cesto valjda da stavlja tacke, 10metara (metri su po difoltu)
         startRun()
     }
     
@@ -89,7 +89,8 @@ extension CurrentRunVC: CLLocationManagerDelegate {
             startLocation = locations.first
         } else if let location = locations.last {
             runDistance += lastLocation.distance(from: location)
-            distanceLbl.text = "\(runDistance)"
+            distanceLbl.text = "\(runDistance)" //u metrima
+            distanceLbl.text = "\(runDistance.metersToMiles(place: 2))" //u miljama
         }
         lastLocation = locations.last
     }
