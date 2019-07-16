@@ -173,6 +173,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfX-4x-cIQ">
                                 <rect key="frame" x="255" y="552" width="75" height="75"/>
                                 <state key="normal" image="pauseButton"/>
+                                <connections>
+                                    <action selector="pauseBtnPressed:" destination="TnT-ZB-xRj" eventType="touchUpInside" id="gv0-eb-Tkm"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="END RUN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJs-nz-sr9">
                                 <rect key="frame" x="152" y="580.5" width="71" height="18.5"/>
@@ -216,6 +219,10 @@
                         <viewLayoutGuide key="safeArea" id="hQM-Vb-8Dk"/>
                     </view>
                     <connections>
+                        <outlet property="distanceLbl" destination="2ma-53-AJ4" id="M5N-UE-BYQ"/>
+                        <outlet property="durationLbl" destination="kAR-cW-gPb" id="9KY-LM-kqc"/>
+                        <outlet property="paceLbl" destination="CmO-Nk-dG9" id="LFf-aT-RgZ"/>
+                        <outlet property="pauseBtn" destination="VfX-4x-cIQ" id="SIm-f9-cCd"/>
                         <outlet property="sliderImageView" destination="u0p-lb-I3l" id="eCi-Ix-5gW"/>
                         <outlet property="swipeBGImageVIew" destination="I8b-bn-inb" id="GKc-EG-dO4"/>
                     </connections>
