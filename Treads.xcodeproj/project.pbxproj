@@ -36,6 +36,7 @@
 		52AB33B422DDEFD90045E358 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AB33B322DDEFD90045E358 /* Extensions.swift */; };
 		52C1152F22DEF2B900AB5905 /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C1152E22DEF2B900AB5905 /* Run.swift */; };
 		52C1153122DF005500AB5905 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C1153022DF005500AB5905 /* Constants.swift */; };
+		52C1153322DF12FB00AB5905 /* RunLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C1153222DF12FB00AB5905 /* RunLogCell.swift */; };
 		789D4E26052CFFD29BCEBDCB /* Pods_Treads.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C119CBE4729902766DBCBF62 /* Pods_Treads.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		52AB33B322DDEFD90045E358 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		52C1152E22DEF2B900AB5905 /* Run.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
 		52C1153022DF005500AB5905 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		52C1153222DF12FB00AB5905 /* RunLogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunLogCell.swift; sourceTree = "<group>"; };
 		8ADCBC6C4E88FA183060EB4E /* Pods-Treads.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Treads.release.xcconfig"; path = "Pods/Target Support Files/Pods-Treads/Pods-Treads.release.xcconfig"; sourceTree = "<group>"; };
 		C119CBE4729902766DBCBF62 /* Pods_Treads.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Treads.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2525331EB08030F5D6C1CE2 /* Pods-Treads.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Treads.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Treads/Pods-Treads.debug.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		52AB338922DD9C0F0045E358 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				52C1153222DF12FB00AB5905 /* RunLogCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				52AB33B022DDCC270045E358 /* LocationVC.swift in Sources */,
 				52AB337222DD99550045E358 /* AppDelegate.swift in Sources */,
 				52C1152F22DEF2B900AB5905 /* Run.swift in Sources */,
+				52C1153322DF12FB00AB5905 /* RunLogCell.swift in Sources */,
 				52AB337422DD99550045E358 /* BeginRunVC.swift in Sources */,
 				52C1153122DF005500AB5905 /* Constants.swift in Sources */,
 			);

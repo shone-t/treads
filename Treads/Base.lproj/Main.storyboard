@@ -259,12 +259,12 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG" translatesAutoresizingMaskIntoConstraints="NO" id="e3N-z8-4aL">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Q1-ab-dUr">
-                                <rect key="frame" x="0.0" y="58" width="375" height="560"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Q1-ab-dUr">
+                                <rect key="frame" x="0.0" y="60" width="375" height="558"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RunLogCell" rowHeight="80" id="wOq-HH-TYn">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RunLogCell" rowHeight="80" id="wOq-HH-TYn" customClass="RunLogCell" customModule="Treads" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wOq-HH-TYn" id="oiA-x6-XQX">
@@ -301,8 +301,8 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/mi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4db-we-AxB">
-                                                            <rect key="frame" x="20" y="27.5" width="20" height="15"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4db-we-AxB">
+                                                            <rect key="frame" x="18.5" y="27.5" width="23.5" height="15"/>
                                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -315,27 +315,43 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1d-oV-CkO">
+                                                    <rect key="frame" x="0.0" y="79" width="375" height="1"/>
+                                                    <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="F0B-LZ-Rtc"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="rLO-EF-5ON" firstAttribute="centerY" secondItem="oiA-x6-XQX" secondAttribute="centerY" id="0bh-hG-aXP"/>
+                                                <constraint firstItem="f1d-oV-CkO" firstAttribute="leading" secondItem="oiA-x6-XQX" secondAttribute="leading" id="93i-bQ-UA0"/>
                                                 <constraint firstItem="puJ-gn-Rul" firstAttribute="top" secondItem="oiA-x6-XQX" secondAttribute="top" id="9tS-wq-PWu"/>
                                                 <constraint firstAttribute="bottom" secondItem="puJ-gn-Rul" secondAttribute="bottom" id="H9o-Li-eYh"/>
                                                 <constraint firstItem="iPy-oh-KX0" firstAttribute="leading" secondItem="oiA-x6-XQX" secondAttribute="leadingMargin" constant="8" id="Ldm-l4-xe0"/>
+                                                <constraint firstAttribute="bottom" secondItem="f1d-oV-CkO" secondAttribute="bottom" id="Olv-Wf-5vI"/>
                                                 <constraint firstAttribute="trailing" secondItem="puJ-gn-Rul" secondAttribute="trailing" id="Wx2-uJ-ERJ"/>
                                                 <constraint firstItem="ueN-va-ekQ" firstAttribute="centerY" secondItem="oiA-x6-XQX" secondAttribute="centerY" id="eJn-Nt-ncF"/>
                                                 <constraint firstItem="iPy-oh-KX0" firstAttribute="centerY" secondItem="oiA-x6-XQX" secondAttribute="centerY" id="fHq-vI-ue1"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="rLO-EF-5ON" secondAttribute="trailing" constant="8" id="fud-MZ-tuE"/>
                                                 <constraint firstItem="ueN-va-ekQ" firstAttribute="centerX" secondItem="oiA-x6-XQX" secondAttribute="centerX" id="lgY-mQ-cvj"/>
                                                 <constraint firstItem="puJ-gn-Rul" firstAttribute="leading" secondItem="oiA-x6-XQX" secondAttribute="leading" id="ors-fD-5BC"/>
+                                                <constraint firstAttribute="trailing" secondItem="f1d-oV-CkO" secondAttribute="trailing" id="y42-AL-bym"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="averagePaceLbl" destination="pv8-7v-YAM" id="Wkn-3v-bRI"/>
+                                            <outlet property="dateLbl" destination="rLO-EF-5ON" id="JFa-zy-AGW"/>
+                                            <outlet property="runDurationLbl" destination="0HZ-MD-QwZ" id="vRC-dW-iBX"/>
+                                            <outlet property="totalDistanceLbl" destination="vlO-sL-NAF" id="QlC-do-n0Z"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcu-90-c6t">
-                                <rect key="frame" x="172.5" y="28" width="30" height="20"/>
-                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
+                                <rect key="frame" x="171" y="28" width="33" height="22"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -356,6 +372,9 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Log" image="tabbar-myLogIconGray" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="tableView" destination="3Q1-ab-dUr" id="Pcf-sO-MeV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>

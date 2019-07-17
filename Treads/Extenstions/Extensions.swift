@@ -15,6 +15,15 @@ extension Double {
         return ((self / 1609.34) * divisor).rounded() / divisor
     }
     
+    func metersToDecimal(place: Int) -> Double {
+        let divisor = pow(10.0, Double(place))
+        return (self * divisor).rounded() / divisor
+    }
+    func metersToKilometers(place: Int) -> Double {
+        let divisor = pow(10.0, Double(place))
+        return (self / 1000.00 * divisor).rounded() / divisor
+    }
+    
 }
 
 extension Int {
@@ -32,5 +41,16 @@ extension Int {
                 return String(format: "%02d:%02d:%02d", durationHours, durationMinutes, durationSecond)
             }
         }
+    }
+}
+
+extension NSDate {
+    func getDateString() -> String {
+        let calendar = Calendar.current
+        let month = calendar.component(.month, from: self as Date)
+        let day = calendar.component(.day, from: self as Date)
+        let year = calendar.component(.year, from: self as Date)
+        
+        return "\(day).\(month).\(year)"
     }
 }

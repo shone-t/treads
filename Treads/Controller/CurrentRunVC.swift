@@ -138,9 +138,9 @@ extension CurrentRunVC: CLLocationManagerDelegate {
             runDistance += lastLocation.distance(from: location)
             
             //distanceLbl.text = "\(runDistance)" //u metrima
-            distanceLbl.text = "\(runDistance.metersToMiles(place: 2))" //u miljama
+            distanceLbl.text = "\(runDistance.metersToKilometers(place: 2))"
             if counter > 0 && runDistance > 0 {
-                paceLbl.text = calculatePace(time: counter, miles: runDistance.metersToMiles(place: 2))
+                paceLbl.text = calculatePace(time: counter, miles: runDistance.metersToKilometers(place: 2))
             }
             visinaLbl.text = "\(location.altitude) m"
 //            print(location.altitude)
