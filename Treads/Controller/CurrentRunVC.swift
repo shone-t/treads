@@ -32,7 +32,7 @@ class CurrentRunVC: LocationVC {
     
     fileprivate var pace = 0
     
-    fileprivate var lokacije = List<Location>()
+    fileprivate var koordianteLokacije = List<Location>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +57,7 @@ class CurrentRunVC: LocationVC {
     func endRun() {
         manager?.stopUpdatingLocation()
         //ovde dodajemo podatke u bazu, odavde tek cuvamo
-        Run.addRunToRealm(pace: pace, distance: runDistance, duration: counter, lokacije2: lokacije)
+        Run.addRunToRealm(pace: pace, distance: runDistance, duration: counter, lokacije2: koordianteLokacije)
     }
     
     func startTimer(){
@@ -142,7 +142,7 @@ extension CurrentRunVC: CLLocationManagerDelegate {
             
             //ovde na kraju dodajemo ovu lokaciju kako bi upisali i nacrtali putanju
             let newLocation = Location(latitude: Double(lastLocation.coordinate.latitude), longitude: Double(lastLocation.coordinate.longitude))
-            lokacije.insert(newLocation, at: 0)
+            koordianteLokacije.insert(newLocation, at: 0)
             //distanceLbl.text = "\(runDistance)" //u metrima
             distanceLbl.text = "\(runDistance.metersToKilometers(place: 2))"
             if counter > 0 && runDistance > 0 {
