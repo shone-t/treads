@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import RealmSwift
 
 //class CurrentRunVC: UIViewController {
 class CurrentRunVC: LocationVC {
@@ -21,15 +22,17 @@ class CurrentRunVC: LocationVC {
     @IBOutlet weak var pauseBtn: UIButton!
     @IBOutlet weak var visinaLbl: UILabel!
     
-    var startLocation: CLLocation!
-    var lastLocation: CLLocation!
+    fileprivate var startLocation: CLLocation!
+    fileprivate var lastLocation: CLLocation!
     
-    var runDistance: Double = 0.0
+    fileprivate var runDistance: Double = 0.0
     
-    var counter = 0
-    var timer = Timer()
+    fileprivate var counter = 0
+    fileprivate var timer = Timer()
     
-    var pace = 0
+    fileprivate var pace = 0
+    
+    fileprivate var lokacije = List<Location>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +57,7 @@ class CurrentRunVC: LocationVC {
     func endRun() {
         manager?.stopUpdatingLocation()
         //ovde dodajemo podatke u bazu, odavde tek cuvamo
-        Run.addRunToRealm(pace: pace, distance: runDistance, duration: counter)
+        Run.addRunToRealm(pace: pace, distance: runDistance, duration: counter, lokacije2: lokacije)
     }
     
     func startTimer(){
@@ -137,6 +140,9 @@ extension CurrentRunVC: CLLocationManagerDelegate {
         } else if let location = locations.last {
             runDistance += lastLocation.distance(from: location)
             
+            //ovde na kraju dodajemo ovu lokaciju kako bi upisali i nacrtali putanju
+            let newLocation = Location(latitude: Double(lastLocation.coordinate.latitude), longitude: Double(lastLocation.coordinate.longitude))
+            lokacije.insert(newLocation, at: 0)
             //distanceLbl.text = "\(runDistance)" //u metrima
             distanceLbl.text = "\(runDistance.metersToKilometers(place: 2))"
             if counter > 0 && runDistance > 0 {

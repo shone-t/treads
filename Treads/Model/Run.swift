@@ -15,6 +15,7 @@ class Run: Object {
     @objc dynamic public private(set) var pace = 0
     @objc dynamic public private(set) var distance = 0.0
     @objc dynamic public private(set) var duration = 0
+    public private(set) var lokacije = List<Location>()
     
     override class func primaryKey() -> String {
         return "id"
@@ -22,20 +23,22 @@ class Run: Object {
     override class func indexedProperties() -> [String] {
         return ["pace", "date", "duration"]
     }
-    convenience init(pace: Int, distance: Double, duration: Int) {
+    convenience init(pace: Int, distance: Double, duration: Int, lokacije: List<Location>) {
         self.init()
         self.id = UUID().uuidString.lowercased() //dodeljivanje nasumicnog indetifikatora
         self.date = NSDate()
         self.pace = pace
         self.distance = distance
         self.duration = duration
+        
+        self.lokacije = lokacije
     }
     
-    static func addRunToRealm(pace: Int, distance: Double, duration: Int){
+    static func addRunToRealm(pace: Int, distance: Double, duration: Int, lokacije2: List<Location>){
         REALM_QUEUE.sync {
-            let ourRUn = Run(pace: pace, distance: distance, duration: duration)
+            let ourRUn = Run(pace: pace, distance: distance, duration: duration, lokacije: lokacije2)
             do {
-                let realm = try Realm()
+                let realm = try Realm(configuration: RealmConfig.runDataConfig)
                 try realm.write {
                     realm.add(ourRUn)
                     try realm.commitWrite()
@@ -49,7 +52,7 @@ class Run: Object {
     }
     static func getAllRuns() -> Results<Run>? {
         do {
-            let realm = try Realm()
+            let realm = try Realm(configuration: RealmConfig.runDataConfig)
             var runs = realm.objects(Run.self)
             runs = runs.sorted(byKeyPath: "date", ascending: false)
             return runs
